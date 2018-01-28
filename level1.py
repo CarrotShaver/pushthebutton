@@ -1,5 +1,4 @@
-#	TODO:
-#1. Make cat function, probably by using values associated with keys under the various directories
+# TODO:
 #2. Populate directories with relevant files
 #3. fix bugs, probably
 #4. Populate directoreis with irrelevant files
@@ -7,34 +6,35 @@
 #defining initial variables & dictionaries
 userDirectory = "Home"
 sshTargets = ["", "Hawk", "Robin", "Wren", "Eagle"]
+SSH = False
 Directories = {
-	"Home" : {
-		"Desktop" : {
-        	#populate me
-        	"someFile" : "This is a test file."
-		},
-		"Documents" : {
-			#populate me
-		},
-		"Downloads" : {
-			#populate me
-		},
-		"Emails" : {
-			#populate me
-			#email for progressing: "Hey, Ed here. We've just updated to a new system,and you don't have an account yet.
-			#For now, you can ssh into mine. Username: Ed@button.gov, password: password. 
-			#Remember to use a better password when you make your own account though!"
-		},
-		"Music" : {
-			#populate me
-		},
-		"Pictures" : {
-			#populate me
-		},
-		"Videos" : {
-			#populate me
-		}
-	}
+  "Home" : {
+    "Desktop" : {
+          #populate me
+          "someFile" : "This is a test file.",
+          "anotherFile" : "This is another test",
+          "oneMoreFile" : "Here's one more"
+    },
+    "Documents" : {
+      #populate me
+    },
+    "Downloads" : {
+      #populate me
+    },
+    "Emails" : {
+      "New Systems" : "Hey, Ed here. We've just updated to a new system,and you don't have an account yet. For now, you can ssh into mine. Username: Ed@button.gov, password: password. Remember to use a better password when you make your own account though!"
+      #populate me"
+    },
+    "Music" : {
+      #populate me
+    },
+    "Pictures" : {
+      #populate me
+    },
+    "Videos" : {
+      #populate me
+    }
+  }
 }
 
 
@@ -100,7 +100,7 @@ def cat():
       tmp = x
     catChoice = input("> ")
     catChoice = inputCleaner(catChoice, (tmp+1))
-    print(Directories["Home"][userDirectory][listOfFiles[tmp]][catChoice])
+    print(Directories["Home"][userDirectory][listOfFiles[(catChoice-1)]])
 
 #defining the ssh function
 def ssh():
@@ -108,11 +108,12 @@ def ssh():
   sshTarget = inputCleaner(sshTarget, 4)
   sshPassword = input("What is %s's password?" % sshTargets[sshTarget])
   if (sshTarget == 2 and sshPassword == "password"):
-    return False
+    global SSH
+    SSH = True
 
 #Game Loop
 def main():
-  while True:
+  while (SSH is False):
     command = input("What should I do? \n1. ls \n2. cd \n3. cat \n4. ssh \n5. help \n>")
     command = inputCleaner(command, 5)
     if (command == 1):
@@ -126,4 +127,5 @@ def main():
     elif (command == 5):
       commandInfo()
       
-main()
+if __name__ == "__main__":
+  main()
