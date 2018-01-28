@@ -4,7 +4,7 @@
 #3. Populate directories with relevant files
 #4. Populate directoreis with irrelevant files
 #5. fix bugs, probably
-
+import help
 #defining initial variables & dictionaries
 userDirectory = "Home"
 Directories = {
@@ -49,21 +49,7 @@ def inputCleaner(string, size):
   if (int(string) < 1) or (int(string) > size):
     print("You must choose one of the number options!")
     return -1
-    
-#Defining the help function
-def commandInfo():
-  helpInput = input("Which command would you like help with? \n1. ls \n2. cd \n3. cat \n4. ssh \n5. help \n >")
-  helpInput = inputCleaner(helpInput, 5)
-  if (helpInput == 1):
-    print("Shows contents of current directory.")
-  elif (helpInput == 2):
-    print("Change location to a specified directory, up 1 level, or return to the Home directory") 
-  elif (helpInput == 3):
-    print("Displays contents of a specified file")
-  elif (helpInput == 4):
-    print("Connects to a different user / ip")
-  elif (helpInput == 5):
-    print("How did you get here if you don't know how to use help?")
+
     
 #Defining the ls function
 def ls():
@@ -89,10 +75,12 @@ def cd():
     
 #defining the cat function
 def cat():
+    print("to be implemented")
 	#probably get the value associated with keys inside of directories.
 
 #defining the ssh function
 def ssh():
+    print("to be implemented")
 	#Not sure how to implement this yet
 
 #Game Loop
@@ -109,6 +97,6 @@ def main():
     elif (command == 4):
       ssh()
     elif (command == 5):
-      commandInfo()
+      help.help(1)
       
 main()
