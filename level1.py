@@ -78,8 +78,7 @@ def cd():
 #defining the cat function
 def cat():
     print("to be implemented")
-	#probably get the value associated with keys inside of directories.
-	return
+    return
 
 #defining the ssh function
 def ssh():
