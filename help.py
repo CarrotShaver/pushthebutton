@@ -45,6 +45,11 @@ def ssh():
     print("Example: 'ssh burd@192.168.0.2' will switch to burd on the 192.168.0.2 network")
     input("Press enter to continue...")
 
+def nmap():
+    delay_print(">help nmap\n")
+    print("The 'nmap' command allows you to see all the services and ports running on an IP")
+    print("Example: 'nmap burd@192.168.0.2' will show all the services and ports for the user burd")
+
 def helphelp():
     delay_print(">help help\n")
     print("Seriously?... \nThe 'help' command gives information on how to use different commands")
@@ -70,16 +75,42 @@ def level1main():
             return
 def level2main():
     while True:
-        delay_print("What should I do?")
-        userinput = error_checking(input(">"), 5)
+        print("What command do you need help with? \n1. ls \n2. cd \n3. cat \n4. ssh \n5. nmap \n6. help \n7. Go back")
+        userinput = error_checking(input(">"), 7)
+        if userinput == -1:
+            return
+        if userinput == 1:
+            ls()
+        if userinput == 2:
+            cd()
+        if userinput == 3:
+            cat()
+        if userinput == 4:
+            ssh()
+        if userinput == 5:
+            nmap()
+        if userinput == 6:
+            help(1)
+        if userinput == 7:
+            return
 def level3main():
     while True:
-        delay_print("What should I do?")
-        userinput = error_checking(input(">"), 5)
-def level4main():
-    while True:
-        delay_print("What should I do?")
-        userinput = error_checking(input(">"), 5)
+        print("What command do you need help with? \n1. ls \n2. cd \n3. cat \n4. ssh \n5. help \n6. Go back")
+        userinput = error_checking(input(">"), 6)
+        if userinput == -1:
+            return
+        if userinput == 1:
+            ls()
+        if userinput == 2:
+            cd()
+        if userinput == 3:
+            cat()
+        if userinput == 4:
+            ssh()
+        if userinput == 5:
+            help(1)
+        if userinput == 6:
+            return
 
 def help (level):
     if level == 1:
@@ -88,5 +119,3 @@ def help (level):
         level2main()
     if level == 3:
         level3main()
-    if level == 4:
-        level4main()
