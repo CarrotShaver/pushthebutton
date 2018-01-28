@@ -96,7 +96,7 @@ def ssh():
 	#Not sure how to implement this yet
 
 #Game Loop
-def level1():
+def main():
   while True:
     command = input("What should I do? \n1. ls \n2. cd \n3. cat \n4. ssh \n5. help \n>")
     command = inputCleaner(command, 5)
@@ -111,4 +111,4 @@ def level1():
     elif (command == 5):
       commandInfo()
       
-level1()
+main()
