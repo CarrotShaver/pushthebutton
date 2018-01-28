@@ -23,7 +23,7 @@ Directories = {
 		"Emails" : {
 			#populate me
 			#email for progressing: "Hey, Ed here. We've just updated to a new system,and you don't have an account yet.
-			#For now, you can ssh into mine. Username: Ed@button.gov, password: password. 
+			#For now, you can ssh into mine. Username: Ed@button.gov, password: password.
 			#Remember to use a better password when you make your own account though!"
 		},
 		"Music" : {
@@ -52,7 +52,7 @@ def inputCleaner(string, size):
     print("You must choose one of the number options!")
     return -1
 
-    
+
 #Defining the ls function
 def ls():
   if (userDirectory == "Home"):
@@ -74,7 +74,7 @@ def cd():
     directoryChoice = input("Which directory should I move to? \n1. .. \n>")
     directoryChoice = inputCleaner(directoryChoice, 1)
     userDirectory = "Home"
-    
+
 #defining the cat function
 def cat():
     print("to be implemented")
@@ -105,5 +105,6 @@ def main():
       ssh()
     elif (command == 5):
       help.help(1)
-      
-main()
+
+if __name__ == "__main__":
+    main()
