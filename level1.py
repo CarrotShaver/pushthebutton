@@ -1,12 +1,14 @@
 #	TODO:
 #1. Make cat function, probably by using values associated with keys under the various directories
-#2. Make ssh function, don't know how yet
-#3. Populate directories with relevant files
+#2. Populate directories with relevant files
+#3. fix bugs, probably
 #4. Populate directoreis with irrelevant files
 #5. fix bugs, probably
 import help
+
 #defining initial variables & dictionaries
 userDirectory = "Home"
+sshTargets = ["", "Hawk", "Robin", "Wren", "Eagle"]
 Directories = {
 	"Home" : {
 		"Desktop" : {
@@ -77,11 +79,17 @@ def cd():
 def cat():
     print("to be implemented")
 	#probably get the value associated with keys inside of directories.
+	return
 
 #defining the ssh function
 def ssh():
     print("to be implemented")
-	#Not sure how to implement this yet
+    #Not sure how to implement this yet
+    sshTarget = input("Who do you want to SSH into? \n1. Hawk \n2. Robin \n3. Wren \n4. Eagle \n>")
+    sshTarget = inputCleaner(sshTarget, 4)
+    sshPassword = input("What is %s's password?" % sshTargets[sshTarget])
+    if (sshTarget == 2 and sshPassword == "password"):
+        return False
 
 #Game Loop
 def main():
