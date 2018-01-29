@@ -1,8 +1,3 @@
-# TODO:
-#2. Populate directories with relevant files
-#3. fix bugs, probably
-#4. Populate directoreis with irrelevant files
-
 #defining initial variables & dictionaries
 userDirectory = "Home"
 sshTargets = ["", "Hawk", "Robin", "Wren", "Eagle"]
@@ -10,29 +5,37 @@ SSH = False
 Directories = {
   "Home" : {
     "Desktop" : {
-          #populate me
-          "someFile" : "This is a test file.",
-          "anotherFile" : "This is another test",
-          "oneMoreFile" : "Here's one more"
+      "Ccleaner.exe" : "A computer cleaning program.",
+      "Google Chrome.exe" : "The bookmarks are full of cat videos.",
+      "Egg hunt.png" : "A picture of several young kids with easter egg baskets."
     },
     "Documents" : {
-      #populate me
+      "notes.txt" : "A bunch of notes about weird data entries.",
+      "to do.txt" : "A to do list. The next item on it says to make an account on the new network like Robin emailed about."
     },
     "Downloads" : {
-      #populate me
+      "javaInstaller.exe" : "A java installer.",
+      "WIN_K58_580_680S_680TF_420_540_Driver12.3.7.zip":  "a drawing tablet driver.",
     },
     "Emails" : {
-      "New Systems" : "Hey, Ed here. We've just updated to a new system,and you don't have an account yet. For now, you can ssh into mine. Username: Ed@button.gov, password: password. Remember to use a better password when you make your own account though!"
-      #populate me"
+      "New Systems" : "Hey, Robin here. We've just updated to a new system,and you don't have an account yet. For now, you can ssh into mine. Username: Robin@button.gov, password: password. Remember to use a better password when you make your own account though!"
+      
     },
     "Music" : {
-      #populate me
+      "Fantaise Impromptu.mp3" : "A nice piece of classical music, that's very pleasing to the ears.",
+      "Never Gonna Give You Up.mp3" : "You've been rick rolled."
+      "Fireworks.mp3" : "Do you ever feel, like a plastic bag..."
     },
     "Pictures" : {
-      #populate me
+      "Birds.jpg" : "A picture of ducks flying in a v formation.",
+      "Funny Joke.png" : "A bad joke, overlaid over a picture of a cow. \nWhy was the cow afraid? \nBecause he was a cow-herd!",
+      "Amazing Food.png" : "A picture of a bowl of ramen, which does look quite appetizing."
     },
     "Videos" : {
-      #populate me
+      "Crazy Cat.mp4" : "A video of a cat freaking out after having too much catnip.",
+      "Friendly Ferret.mp4" : "A video of a ferret trying to cuddle up with a man's beard."
+      "Adorable Owl.mov" : "A video of a sleepy owl, nodding off where it stands.",
+      "Sneaky Squirrel.mov" : "A video of a squirrel sneaking up to a beed feeder and stealing seeds from it."
     }
   }
 }
